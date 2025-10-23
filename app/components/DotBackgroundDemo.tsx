@@ -7,8 +7,7 @@ export default function DotBackgroundDemo() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const dotsRef = useRef<Array<{ x: number; ox: number; y: number; oy: number; vx: number; vy: number }>>([])
   const mouseRef = useRef({ x: 0, y: 0, active: false })
-  const timeRef = useRef(0)
-  const animationToggleRef = useRef(true)
+  const lastFrameRef = useRef(0)
   const contentHeightRef = useRef(0)
 
   useEffect(() => {
@@ -16,7 +15,7 @@ export default function DotBackgroundDemo() {
     const container = containerRef.current
     if (!canvas || !container) return
 
-    const ctx = canvas.getContext("2d")
+    const ctx = canvas.getContext("2d", { alpha: false })
     if (!ctx) return
 
     const updateCanvasSize = () => {
@@ -29,84 +28,67 @@ export default function DotBackgroundDemo() {
 
     const initializeDots = () => {
       dotsRef.current = []
-      const dotSpacing = 10
+      const dotSpacing = window.innerWidth > 1600 ? 15 : window.innerWidth > 1024 ? 12 : 10
       const cols = Math.ceil(window.innerWidth / dotSpacing)
       const rows = Math.ceil(contentHeightRef.current / dotSpacing)
       const totalDots = cols * rows
 
       for (let i = 0; i < totalDots; i++) {
-        const dot = {
-          x: (i % cols) * dotSpacing + 5,
-          ox: (i % cols) * dotSpacing + 5,
-          y: Math.floor(i / cols) * dotSpacing + 5,
-          oy: Math.floor(i / cols) * dotSpacing + 5,
-          vx: 0,
-          vy: 0,
-        }
-        dotsRef.current.push(dot)
+        const x = (i % cols) * dotSpacing + dotSpacing / 2
+        const y = Math.floor(i / cols) * dotSpacing + dotSpacing / 2
+        dotsRef.current.push({ x, ox: x, y, oy: y, vx: 0, vy: 0 })
       }
     }
 
     const handleMouseMove = (e: MouseEvent) => {
-      mouseRef.current.x = e.clientX
-      mouseRef.current.y = e.clientY + window.scrollY
-      mouseRef.current.active = true
+      mouseRef.current = { x: e.clientX, y: e.clientY + window.scrollY, active: true }
     }
 
-    const animate = () => {
+    const animate = (now: number) => {
+      // Throttle frame rate (~60fps)
+      if (now - lastFrameRef.current < 16) {
+        requestAnimationFrame(animate)
+        return
+      }
+      lastFrameRef.current = now
+
       const dots = dotsRef.current
       const mouse = mouseRef.current
-      const repulsionRadius = 250000000
-      const friction = 0.6
-      const returnForce = 0.6
+      const repulsionRadius = 25000 // Reduced for lighter math
+      const friction = 0.75
+      const returnForce = 0.15
       const scrollY = window.scrollY
 
-      animationToggleRef.current = !animationToggleRef.current
+      ctx.fillStyle = "#000"
+      ctx.fillRect(0, 0, canvas.width, canvas.height)
+      ctx.fillStyle = "rgba(230, 92, 0, 1)"
 
-      if (animationToggleRef.current) {
-        if (!mouse.active) {
-          timeRef.current = Date.now() * 1
-          const h = timeRef.current
-          mouse.x = window.innerWidth * 0.5 + Math.cos(2.1 * h) * Math.cos(0.9 * h) * window.innerWidth * 0.45
-          mouse.y =
-            window.innerHeight * 0.5 +
-            Math.sin(3.2 * h) * Math.tan(Math.sin(0.8 * h)) * window.innerHeight * 0.45 +
-            scrollY
+      const mX = mouse.x
+      const mY = mouse.y
+
+      for (let i = 0; i < dots.length; i++) {
+        const dot = dots[i]
+        const dx = mX - dot.x
+        const dy = mY - dot.y
+        const distSq = dx * dx + dy * dy
+
+        // Repulsion zone (smaller range = faster)
+        if (distSq < repulsionRadius && distSq > 0) {
+          const force = (-1200 / distSq) * 0.9
+          const angle = Math.atan2(dy, dx)
+          dot.vx += force * Math.cos(angle)
+          dot.vy += force * Math.sin(angle)
         }
 
-        for (let i = 0; i < dots.length; i++) {
-          const dot = dots[i]
-          const dx = mouse.x - dot.x
-          const dy = mouse.y - dot.y
-          const distSq = dx * dx + dy * dy
+        dot.vx *= friction
+        dot.vy *= friction
+        dot.x += dot.vx + (dot.ox - dot.x) * returnForce
+        dot.y += dot.vy + (dot.oy - dot.y) * returnForce
 
-          if (distSq < repulsionRadius && distSq > 0) {
-            const angle = Math.atan2(dy, dx)
-            const force = (-40000 / distSq) * 0.8
-            dot.vx += force * Math.cos(angle)
-            dot.vy += force * Math.sin(angle)
-          }
-
-          dot.vx *= friction
-          dot.vy *= friction
-          dot.x += dot.vx
-          dot.y += dot.vy
-          dot.x += (dot.ox - dot.x) * returnForce
-          dot.y += (dot.oy - dot.y) * returnForce
-        }
-      } else {
-        ctx.fillStyle = "rgb(0, 0, 0)"
-        ctx.fillRect(0, 0, canvas.width, canvas.height)
-
-        for (let i = 0; i < dots.length; i++) {
-          const dot = dots[i]
-          const dotScreenY = dot.y - scrollY
-
-          if (dotScreenY < -50 || dotScreenY > window.innerHeight + 50) continue
-
-          ctx.fillStyle = "rgba(230, 92, 0, 1)"
+        const dotScreenY = dot.y - scrollY
+        if (dotScreenY > -5 && dotScreenY < window.innerHeight + 5) {
           ctx.beginPath()
-          ctx.arc(dot.x, dotScreenY, 0.4, 0, Math.PI * 2)
+          ctx.arc(dot.x, dotScreenY, 0.6, 0, Math.PI * 2)
           ctx.fill()
         }
       }
@@ -120,7 +102,7 @@ export default function DotBackgroundDemo() {
     window.addEventListener("scroll", () => {
       contentHeightRef.current = document.documentElement.scrollHeight
     })
-    animate()
+    requestAnimationFrame(animate)
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove)
@@ -129,20 +111,12 @@ export default function DotBackgroundDemo() {
   }, [])
 
   return (
-    <div ref={containerRef} className="relative w-full bg-black">
-      {/* <canvas ref={canvasRef} className="fixed inset-0 pointer-events-none z-0" /> */}
-
-      {/* Foreground content that scrolls over the background */}
+    <div ref={containerRef} className="relative w-full bg-black overflow-x-hidden">
+      <canvas ref={canvasRef} className="fixed inset-0 pointer-events-none z-0" />
       <div className="relative z-10">
         <div className="min-h-screen flex flex-col justify-center px-4">
-          {/* <h1 className="text-6xl font-bold text-white mb-4 text-center">Welcome</h1>
-          <p className="text-xl text-gray-300 max-w-2xl text-center">
-            Scroll down to explore the interactive dot background that responds to your mouse movement
-          </p> */}
           <Home />
         </div>
-
-       
       </div>
     </div>
   )
