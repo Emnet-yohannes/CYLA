@@ -19,9 +19,10 @@
 }
 
 
+
 *,:after,:before {
     box-sizing: border-box;
-    border: 0 solid #e5e7eb
+    border: 0 solid #e5e7eb;
 }
 
 :after,:before {
@@ -52,6 +53,7 @@ html {
 
 body {
     margin: 0;
+    padding: 0;
     line-height: inherit;
      font-family: var(--font-hauss-aero-regular);
 }

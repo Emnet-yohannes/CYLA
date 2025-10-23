@@ -16,7 +16,7 @@ interface TextScrambleProps {
   hoveringColor?: string
 }
 
-const CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*"
+const CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*"
 
 export function TextScramble({
   children,
@@ -109,11 +109,10 @@ export function TextScramble({
     if (typeof node === "string") {
       return (
         <span
-          className={`transition-colors duration-300 inline-block ${className}`}
+          className={`transition-colors duration-300 inline-block font-nb-architekt ${className}`}
           style={{
             color: isHovering ? hoveringColor : "#FF7A00",
-            width: textWidth ? `${textWidth}px` : "auto",
-            fontFamily: "monospace", // ✅ ensures equal character width
+            width: textWidth ? `${textWidth}px` : "auto", // ✅ ensures equal character width
             whiteSpace: "pre", // ✅ preserves spacing
             display: "inline-block",
             textAlign: "left",
@@ -141,8 +140,8 @@ export function TextScramble({
       {/* hidden span for measuring text width */}
       <span
         ref={measureRef}
-        className="invisible absolute whitespace-pre"
-        style={{ fontFamily: "monospace", pointerEvents: "none" }}
+        className="invisible absolute whitespace-pre font-nb-architekt"
+        // style={{ fontFamily: "monospace", pointerEvents: "none" }}
       >
         {originalText}
       </span>

@@ -130,17 +130,17 @@ export default function DotBackgroundDemo() {
 
   return (
     <div ref={containerRef} className="relative w-full bg-black">
-      <canvas ref={canvasRef} className="fixed inset-0 pointer-events-none z-0" />
+      {/* <canvas ref={canvasRef} className="fixed inset-0 pointer-events-none z-0" /> */}
 
       {/* Foreground content that scrolls over the background */}
       <div className="relative z-10">
-        <header className="min-h-screen flex flex-col items-center justify-center px-4">
+        <div className="min-h-screen flex flex-col justify-center px-4">
           {/* <h1 className="text-6xl font-bold text-white mb-4 text-center">Welcome</h1>
           <p className="text-xl text-gray-300 max-w-2xl text-center">
             Scroll down to explore the interactive dot background that responds to your mouse movement
           </p> */}
           <Home />
-        </header>
+        </div>
 
        
       </div>

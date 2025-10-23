@@ -6,12 +6,12 @@ import RealTimeClock from "./RealTimeClock";
 
 const Home = () => {
   return (
-    <div>
+    <div >
       <div>
         <div className="relative h-screen ">
           <div>
-            <div className="flex justify-center items-center min-w-full">
-              <div className="container flex px-4 py-4 w-full justify-between items-center z-10">
+            <div className="flex justify-center items-center min-w-full  ">
+              <div className=" flex   py-4 w-full justify-between items-center z-10">
                 <div
                   style={{
                     // color: "#FF7A00",
@@ -23,7 +23,7 @@ const Home = () => {
                   CYLA
                   <div>//online</div>
                 </div>
-                <div className="flex space-x-4 sm:space-x-0 items-center">
+                <div className="flex space-x-4 sm:space-x-0 items-center ">
                   <div className="space-x-6 sm:flex hidden items-center"></div>
                   <div className="space-x-4">
                     <a
@@ -403,7 +403,7 @@ const Home = () => {
                   </div>
                 </div>
               </div>
-              <div className="container fixed bottom-[1.83rem] px-4 z-10">
+              <div className="w-[97%] fixed bottom-[1.83rem] px-4 z-10">
                 <div className="border border-brand/80 hidden sm:flex items-center justify-between px-4 py-2 dark:bg-black bg-white !rounded-md">
                   <div className="h-[32px]"></div>
                   <div className="flex space-x-6 sm:space-x-14 !text-sm sm:!text-base">
@@ -601,7 +601,7 @@ const Home = () => {
               className="w-full sm:w-3/4 md:w-1/2 lg:w-1/4 dark:text-white text-black text-center sm:text-left"
               style={{
                 visibility: "visible",
-                fontSize: "clamp(10px, 8vw, 55px)",
+                fontSize: "clamp(10px, 8vw, 75px)",
                 lineHeight: "clamp(36px, 8vw, 100px)",
               }}
             >
@@ -624,7 +624,7 @@ const Home = () => {
               className="w-full sm:w-3/4 md:w-1/2 lg:w-1/4 text-brand text-center sm:text-right"
               style={{
                 visibility: "visible",
-                fontSize: "clamp(10px, 8vw, 55px)",
+                fontSize: "clamp(10px, 8vw, 75px)",
                 lineHeight: "clamp(36px, 8vw, 100px)",
               }}
             >
@@ -1769,7 +1769,7 @@ const Home = () => {
                           </TextScramble>
                         </div>
                         <div
-                          className="border relative sm:hidden text-xs sm:text-sm text-brand font-at-hauss-aero-semibold"
+                          className="relative sm:hidden text-xs sm:text-sm text-brand font-at-hauss-aero-semibold"
                           style={{ visibility: "hidden" }}
                         >
                           <TextScramble>
