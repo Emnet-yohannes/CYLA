@@ -644,6 +644,7 @@ const Home = () => {
                             <TextScramble
                               text="
                             [ connected to devnet ]"
+                             hoveringColor="#FF7A00"
                             />{" "}
                           </div>
                           <div
@@ -653,6 +654,7 @@ const Home = () => {
                             <TextScramble
                               text="
                             [ connected to devnet ]"
+                             hoveringColor="#FF7A00"
                             />
                           </div>
                         </div>
@@ -663,13 +665,15 @@ const Home = () => {
                             style={{ position: "absolute" }}
                             className="min-w-[100px]"
                           >
-                            // time /&gt;
+                            <TextScramble text={`// time />`} hoveringColor="#FF7A00" />
+                            
                           </div>
                           <div
                             className="min-w-[100px]"
                             style={{ visibility: "hidden" }}
                           >
-                            // time /&gt;
+                                                        <TextScramble text={`// time />`} hoveringColor="#FF7A00" />
+
                           </div>
                         </div>
                         <div style={{ position: "relative" , width:'20px' }}>
@@ -690,6 +694,7 @@ const Home = () => {
                               text="
                             [ learning solana — v1.0-beta ]
                             "
+                            hoveringColor="#FF7A00"
                             />
                           </div>
                           <div
@@ -1512,7 +1517,7 @@ const Home = () => {
                           className="sm:mt-4 sm:pl-0 pl-4 max-w-[400px]"
                           style={{ gridArea: "2 / 2 / 3 / 4" }}
                         >
-                          <p className="font-at-hauss-aero-semibold">
+                          <p style={{color:"#FF7A00"}} className="font-at-hauss-aero-semibold ">
                             We look forward to hearing about what you're working towards
                             - a world of web3.ai-enabled possibilities awaits. Ready?
                           </p>
@@ -1915,6 +1920,7 @@ const Home = () => {
                                   <TextScramble
                                     text="
                                   Legal &amp; Compliance"
+                                  hoveringColor='#FF7A00' 
                                   />
                                 </div>
                                 <div
@@ -1924,6 +1930,7 @@ const Home = () => {
                                   <TextScramble
                                     text="
                                   Legal &amp; Compliance "
+                                  hoveringColor='#FF7A00' 
                                   />
                                 </div>
                               </div>
