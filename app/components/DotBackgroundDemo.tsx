@@ -65,7 +65,7 @@ export default function DotBackgroundDemo() {
 
       if (animationToggleRef.current) {
         if (!mouse.active) {
-          timeRef.current = Date.now() * 0.1
+          timeRef.current = Date.now() * 1
           const h = timeRef.current
           mouse.x = window.innerWidth * 0.5 + Math.cos(2.1 * h) * Math.cos(0.9 * h) * window.innerWidth * 0.45
           mouse.y =
