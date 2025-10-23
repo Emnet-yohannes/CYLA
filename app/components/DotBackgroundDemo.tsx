@@ -56,16 +56,16 @@ export default function DotBackgroundDemo() {
     const animate = () => {
       const dots = dotsRef.current
       const mouse = mouseRef.current
-      const repulsionRadius = 10000000
+      const repulsionRadius = 250000000
       const friction = 0.6
-      const returnForce = 0.1
+      const returnForce = 0.6
       const scrollY = window.scrollY
 
       animationToggleRef.current = !animationToggleRef.current
 
       if (animationToggleRef.current) {
         if (!mouse.active) {
-          timeRef.current = Date.now() * 0.00001
+          timeRef.current = Date.now() * 0.1
           const h = timeRef.current
           mouse.x = window.innerWidth * 0.5 + Math.cos(2.1 * h) * Math.cos(0.9 * h) * window.innerWidth * 0.45
           mouse.y =
@@ -82,7 +82,7 @@ export default function DotBackgroundDemo() {
 
           if (distSq < repulsionRadius && distSq > 0) {
             const angle = Math.atan2(dy, dx)
-            const force = (-40000 / distSq) * 0.1
+            const force = (-40000 / distSq) * 0.8
             dot.vx += force * Math.cos(angle)
             dot.vy += force * Math.sin(angle)
           }
