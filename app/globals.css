@@ -1,6 +1,49 @@
+@import "tailwindcss";
 /*
 ! tailwindcss v3.3.3 | MIT License | https://tailwindcss.com
 */
+
+@font-face {
+  font-family: "AtHaussAeroMedium";
+  src: url("https://waye.ai/_next/static/media/AtHaussAero-Medium__AtHaussAero-Medium.df562e71.ttf")
+       format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "AtHaussAeroRegular";
+  src: url("https://waye.ai/_next/static/media/AtHaussAero-Regular_AtHaussAero-Regular.38c3e6fc.ttf")
+       format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "AtHaussAeroSemibold";
+  src: url("https://waye.ai/_next/static/media/AtHaussAero-Semibold__AtHaussAero-Semibold.4947f215.ttf")
+       format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "NBArchitektNeue";
+  src: url("https://waye.ai/_next/static/media/NB_Architekt_Neue_Normal.77cee59f.ttf")
+       format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Example global usage */
+body {
+  font-family: "AtHaussAeroRegular", sans-serif;
+}
+
 *,:after,:before {
     box-sizing: border-box;
     border: 0 solid #e5e7eb

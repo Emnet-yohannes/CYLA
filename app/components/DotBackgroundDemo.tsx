@@ -56,16 +56,16 @@ export default function DotBackgroundDemo() {
     const animate = () => {
       const dots = dotsRef.current
       const mouse = mouseRef.current
-      const repulsionRadius = 100000
-      const friction = 0.5
-      const returnForce = 0.2
+      const repulsionRadius = 10000000
+      const friction = 0.6
+      const returnForce = 0.1
       const scrollY = window.scrollY
 
       animationToggleRef.current = !animationToggleRef.current
 
       if (animationToggleRef.current) {
         if (!mouse.active) {
-          timeRef.current = Date.now() * 0.001
+          timeRef.current = Date.now() * 0.00001
           const h = timeRef.current
           mouse.x = window.innerWidth * 0.5 + Math.cos(2.1 * h) * Math.cos(0.9 * h) * window.innerWidth * 0.45
           mouse.y =
@@ -106,7 +106,7 @@ export default function DotBackgroundDemo() {
 
           ctx.fillStyle = "rgba(230, 92, 0, 1)"
           ctx.beginPath()
-          ctx.arc(dot.x, dotScreenY, 0.3, 0, Math.PI * 2)
+          ctx.arc(dot.x, dotScreenY, 0.4, 0, Math.PI * 2)
           ctx.fill()
         }
       }
