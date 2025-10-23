@@ -1506,6 +1506,7 @@ const Home = () => {
                 </div>
               </div>
             </div>
+            <div className="container relative pb-4 sm:pb-24 sm:mt-40 mt-28 overflow-x-hidden max-w-full">
             <div className="container relative pb-4 sm:pb-24 sm:mt-40 mt-28">
               <div className="absolute right-4 -top-2 transform translate-y-[-100%]"></div>
               <div className="grid relative md:grid-cols-12 sm:grid-cols-2 grid-cols-1 gap-4 border-t border-dashed border-brand/30 p-4">
@@ -1768,7 +1769,7 @@ const Home = () => {
                           </TextScramble>
                         </div>
                         <div
-                          className="text-xs sm:text-sm text-brand font-at-hauss-aero-semibold"
+                          className="border relative sm:hidden text-xs sm:text-sm text-brand font-at-hauss-aero-semibold"
                           style={{ visibility: "hidden" }}
                         >
                           <TextScramble>
@@ -1782,7 +1783,7 @@ const Home = () => {
                         href="https://docs.google.com/document/d/1YkIbCOkjTurnYqFdMrHBDHlWzs15CZkS07UkS2I_j00"
                         target="_blank"
                         rel="noreferrer"
-                        className="w-fit mt-1"
+                        className="w-fit mt-5"
                       >
                         <p className="text-[11px] sm:text-xs hover:text-white font-at-hauss-aero hover:font-at-hauss-aero-semibold">
                           Terms &amp; Conditions
@@ -1802,6 +1803,7 @@ const Home = () => {
                         </p> */}
               </div>
             </div>
+</div>
           </main>
           <div>
             <canvas

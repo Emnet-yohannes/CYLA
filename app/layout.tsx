@@ -1,7 +1,41 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import './globals.css'
+import localFont from "next/font/local";
 
+const atHaussAero = localFont({
+  src: [
+    {
+      path: "../public/fonts/AtHaussAero-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/AtHaussAero-Medium.ttf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/AtHaussAero-Semibold.ttf",
+      weight: "600",
+      style: "normal",
+    },
+  ],
+  variable: "--font-athauss-aero", // CSS variable name
+  display: "swap",
+});
+
+const nbArchitekt = localFont({
+  src: [
+    {
+      path: "../public/fonts/NB_Architekt_Neue_Normal.ttf",
+      weight: "400",
+      style: "normal",
+    },
+  ],
+  variable: "--font-nb-architekt",
+  display: "swap",
+});
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -23,7 +57,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark" style={{colorScheme: "dark"}}>  
+    <html lang="en" style={{colorScheme: "dark"}} className={`dark ${atHaussAero.variable} ${nbArchitekt.variable}`}>  
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

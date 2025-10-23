@@ -2,47 +2,22 @@
 /*
 ! tailwindcss v3.3.3 | MIT License | https://tailwindcss.com
 */
+@font-face{font-family:nb-architekt;src:url(/fonts/NB_Architekt_Neue_Normal.ttf) format("truetype")}
+@font-face{font-family:at-hauss-aero-medium;src:url(/fonts/AtHaussAero-medium.ttf) format("truetype");font-weight:300}
+@font-face{font-family:at-hauss-aero;src:url(/fonts/AtHaussAero-Regular.ttf) format("truetype");font-weight:400}
+@font-face{font-family:at-hauss-aero-medium;src:url(/fonts/AtHaussAero-Medium.ttf) format("truetype");font-weight:500}
+@font-face{font-family:at-hauss-aero-semibold;src:url(/fonts/AtHaussAero-Semibold.ttf) format("truetype");font-weight:600}
+@font-face{font-family:at-hauss-aero-bold;src:url(/_next/static/media/AtHaussAero-Bold.ttf) format("truetype");font-weight:700}
+/* @font-face{font-family:synth-display;src:url(/_next/static/media/SynthDisplayRegular_SynthDisplayRegular.bf7254a3.ttf) format("truetype")}@font-face{font-family:gridular;src:url(/_next/static/media/Gridular-Regular.63001b2c.ttf) format("truetype")}:root{font-family:at-hauss-aero,system-ui,Avenir,Helvetica,Arial,sans-serif; */
 
-@font-face {
-  font-family: "AtHaussAeroMedium";
-  src: url("https://waye.ai/_next/static/media/AtHaussAero-Medium__AtHaussAero-Medium.df562e71.ttf")
-       format("truetype");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
+/* Tailwind v4: define custom font classes using @theme */
+@theme {
+  --font-hauss-aero-regular: "AtHaussAeroRegular", sans-serif;
+  --font-hauss-aero-medium: "AtHaussAeroMedium", sans-serif;
+  --font-hauss-aero-semibold: "AtHaussAeroSemibold", sans-serif;
+  --font-nb-architekt: "NBArchitektNeue", sans-serif;
 }
 
-@font-face {
-  font-family: "AtHaussAeroRegular";
-  src: url("https://waye.ai/_next/static/media/AtHaussAero-Regular_AtHaussAero-Regular.38c3e6fc.ttf")
-       format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "AtHaussAeroSemibold";
-  src: url("https://waye.ai/_next/static/media/AtHaussAero-Semibold__AtHaussAero-Semibold.4947f215.ttf")
-       format("truetype");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "NBArchitektNeue";
-  src: url("https://waye.ai/_next/static/media/NB_Architekt_Neue_Normal.77cee59f.ttf")
-       format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* Example global usage */
-body {
-  font-family: "AtHaussAeroRegular", sans-serif;
-}
 
 *,:after,:before {
     box-sizing: border-box;
@@ -70,14 +45,15 @@ html {
     -moz-tab-size: 4;
     -o-tab-size: 4;
     tab-size: 4;
-    font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+    font-family: at-hauss-aero,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
     font-feature-settings: normal;
     font-variation-settings: normal
 }
 
 body {
     margin: 0;
-    line-height: inherit
+    line-height: inherit;
+     font-family: var(--font-hauss-aero-regular);
 }
 
 hr {
@@ -259,6 +235,7 @@ html {
 }
 
 :root {
+    font-family: at-hauss-aero, system-ui, Avenir, Helvetica, Arial, sans-serif;
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
     --muted: 210 40% 96.1%;
