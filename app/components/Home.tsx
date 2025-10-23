@@ -403,7 +403,7 @@ const Home = () => {
                   </div>
                 </div>
               </div>
-              <div className="w-[97%] fixed bottom-[1.83rem] px-4 z-10">
+              <div className="w-full fixed bottom-[1.83rem] px-4 z-10">
                 <div className="border border-brand/80 hidden sm:flex items-center justify-between px-4 py-2 dark:bg-black bg-white !rounded-md">
                   <div className="h-[32px]"></div>
                   <div className="flex space-x-6 sm:space-x-14 !text-sm sm:!text-base">
