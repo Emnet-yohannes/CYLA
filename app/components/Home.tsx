@@ -11,6 +11,8 @@ const Home = () => {
         <div className="relative h-screen ">
           <div>
             <div className="flex justify-center items-center min-w-full  ">
+              <div className="relative w-full overflow-hidden">
+
               <div className=" flex   py-4 w-full justify-between items-center z-10">
                 <div
                   style={{
@@ -402,6 +404,7 @@ const Home = () => {
                     </div>
                   </div>
                 </div>
+              </div>
               </div>
               <div className="w-full fixed bottom-[1.83rem] px-4 z-10">
                 <div className="border border-brand/80 hidden sm:flex items-center justify-between px-4 py-2 dark:bg-black bg-white !rounded-md">

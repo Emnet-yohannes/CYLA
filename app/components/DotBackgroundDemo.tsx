@@ -135,10 +135,6 @@ export default function DotBackgroundDemo() {
       {/* Foreground content that scrolls over the background */}
       <div className="relative z-10">
         <div className="min-h-screen flex flex-col justify-center px-4 ">
-          {/* <h1 className="text-6xl font-bold text-white mb-4 text-center">Welcome</h1>
-          <p className="text-xl text-gray-300 max-w-2xl text-center">
-            Scroll down to explore the interactive dot background that responds to your mouse movement
-          </p> */}
           <Home />
         </div>
 
