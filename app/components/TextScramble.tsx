@@ -22,7 +22,7 @@ export function TextScramble({
   children,
   className = "",
   scrambleDuration = 0.2,
-  revealDuration = 0.3,
+  revealDuration = 2,
   hoveringColor = "black",
 }: TextScrambleProps) {
   const [displayChars, setDisplayChars] = useState<string[]>([]);
@@ -48,49 +48,51 @@ export function TextScramble({
   };
 
   // Animates text reveal from left to right
-  const scrambleRevealLeftToRight = (text: string) => {
-    if (intervalRef.current) clearInterval(intervalRef.current);
-    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+const scrambleRevealLeftToRight = (text: string) => {
+  if (intervalRef.current) clearInterval(intervalRef.current);
+  if (timeoutRef.current) clearTimeout(timeoutRef.current);
 
-    const chars = text.split("");
-    let progress = 0;
-    const totalSteps = chars.length;
-    const scrambleStepTime = (scrambleDuration * 1000) / totalSteps;
-    const revealStepTime = (revealDuration * 3000) / totalSteps;
+  const chars = text.split("");
+  const delayBetweenChars = 60; // ⏳ delay between each character’s appearance
+  const scrambleSpeed = 12; // speed of scramble flicker per char (ms)
+  const scrambleFrames = 8; // number of random frames before revealing
 
-    setDisplayChars(Array.from(chars, (char) => (char.trim() === "" ? char : getRandomChar())));
+  // Initially hide all letters (keep spaces visible)
+  setDisplayChars(chars.map((char) => (char.trim() === "" ? char : " ")));
 
-    // Scramble initial text quickly for `scrambleDuration`
-    intervalRef.current = setInterval(() => {
-      setDisplayChars((prev) =>
-        prev.map((char, idx) =>
-          chars[idx].trim() === "" ? chars[idx] : getRandomChar()
-        )
-      );
-    }, 75);
+  // For each letter, schedule its appearance + scramble
+  chars.forEach((char, index) => {
+    if (char.trim() === "") return; // skip spaces
 
-    timeoutRef.current = setTimeout(() => {
-      if (intervalRef.current) clearInterval(intervalRef.current);
+    setTimeout(() => {
+      let frame = 0;
 
-      let currentProgress = 0;
-      let revealInterval: NodeJS.Timeout | null = null;
-      // Reveal left to right one by one
-      revealInterval = setInterval(() => {
-        setDisplayChars((prev) =>
-          prev.map((char, idx) =>
-            idx <= currentProgress
-              ? chars[idx]
-              : chars[idx].trim() === "" ? chars[idx] : getRandomChar()
-          )
-        );
-        currentProgress += 1;
-        if (currentProgress >= chars.length) {
-          if (revealInterval) clearInterval(revealInterval);
-          setDisplayChars(chars);
+      const scrambleInterval = setInterval(() => {
+        setDisplayChars((prev) => {
+          const updated = [...prev];
+          // While scrambling, replace with random char
+          updated[index] =
+            frame < scrambleFrames ? getRandomChar() : chars[index];
+          return updated;
+        });
+
+        frame++;
+
+        // Stop scrambling once done
+        if (frame > scrambleFrames) {
+          clearInterval(scrambleInterval);
+          setDisplayChars((prev) => {
+            const updated = [...prev];
+            updated[index] = chars[index];
+            return updated;
+          });
         }
-      }, revealStepTime);
-    }, scrambleDuration * 1000);
-  };
+      }, scrambleSpeed);
+    }, index * delayBetweenChars); // stagger each letter’s start
+  });
+};
+
+
 
   const handleMouseEnter = () => {
     setIsHovering(true);
