@@ -21,12 +21,12 @@ const CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*";
 export function TextScramble({
   children,
   className = "",
-  scrambleDuration = 0.5,
-  revealDuration = 0.8,
+  scrambleDuration = 0.2,
+  revealDuration = 0.3,
   hoveringColor = "black",
 }: TextScrambleProps) {
-  const [displayText, setDisplayText] = useState("");
-  const [originalText, setOriginalText] = useState("");
+  const [displayChars, setDisplayChars] = useState<string[]>([]);
+  const [originalChars, setOriginalChars] = useState<string[]>([]);
   const [isHovering, setIsHovering] = useState(false);
   const [textWidth, setTextWidth] = useState<number | null>(null);
   const measureRef = useRef<HTMLSpanElement | null>(null);
@@ -47,60 +47,75 @@ export function TextScramble({
     return "";
   };
 
-  const scrambleText = (text: string) => {
-    let iteration = 0;
+  // Animates text reveal from left to right
+  const scrambleRevealLeftToRight = (text: string) => {
     if (intervalRef.current) clearInterval(intervalRef.current);
-
-    intervalRef.current = setInterval(() => {
-      const scrambled = text
-        .split("")
-        .map((char, index) => {
-          // ✅ Skip scrambling for spaces or any whitespace character
-          if (char.trim() === "") return char;
-          return index < iteration ? char : getRandomChar();
-        })
-        .join("");
-
-      setDisplayText(scrambled.slice(0, text.length)); // ✅ always same length
-      iteration += 1 / 3;
-
-      if (iteration >= text.length) {
-        clearInterval(intervalRef.current!);
-        setDisplayText(text);
-      }
-    }, 30);
-
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
+
+    const chars = text.split("");
+    let progress = 0;
+    const totalSteps = chars.length;
+    const scrambleStepTime = (scrambleDuration * 1000) / totalSteps;
+    const revealStepTime = (revealDuration * 1000) / totalSteps;
+
+    setDisplayChars(Array.from(chars, (char) => (char.trim() === "" ? char : getRandomChar())));
+
+    // Scramble initial text quickly for `scrambleDuration`
+    intervalRef.current = setInterval(() => {
+      setDisplayChars((prev) =>
+        prev.map((char, idx) =>
+          chars[idx].trim() === "" ? chars[idx] : getRandomChar()
+        )
+      );
+    }, 75);
+
     timeoutRef.current = setTimeout(() => {
-      setDisplayText(text);
       if (intervalRef.current) clearInterval(intervalRef.current);
-    }, (scrambleDuration + revealDuration) * 1000);
+
+      let currentProgress = 0;
+      let revealInterval: NodeJS.Timeout | null = null;
+      // Reveal left to right one by one
+      revealInterval = setInterval(() => {
+        setDisplayChars((prev) =>
+          prev.map((char, idx) =>
+            idx <= currentProgress
+              ? chars[idx]
+              : chars[idx].trim() === "" ? chars[idx] : getRandomChar()
+          )
+        );
+        currentProgress += 1;
+        if (currentProgress >= chars.length) {
+          if (revealInterval) clearInterval(revealInterval);
+          setDisplayChars(chars);
+        }
+      }, revealStepTime);
+    }, scrambleDuration * 1000);
   };
 
   const handleMouseEnter = () => {
     setIsHovering(true);
-    scrambleText(originalText);
+    scrambleRevealLeftToRight(originalChars.join(""));
   };
 
   const handleMouseLeave = () => {
     setIsHovering(false);
-    setDisplayText(originalText);
+    setDisplayChars(originalChars);
     if (intervalRef.current) clearInterval(intervalRef.current);
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
   };
 
   useEffect(() => {
     const text = extractText(children);
-    setOriginalText(text);
-    setDisplayText(text);
+    const chars = text.split("");
+    setOriginalChars(chars);
+    setDisplayChars(chars);
   }, [children]);
 
   useEffect(() => {
-    // measure text width (once) to keep scrambling same width
     if (measureRef.current) {
       setTextWidth(measureRef.current.offsetWidth);
     }
-  }, [originalText]);
+  }, [originalChars.join("")]);
 
   useEffect(() => {
     return () => {
@@ -113,16 +128,16 @@ export function TextScramble({
     if (typeof node === "string") {
       return (
         <span
-          className={`transition-colors duration-300 inline-block font-nb-architekt ${className}`}
+          className={`transition-colors duration-75 inline-block font-nb-architekt ${className}`}
           style={{
             color: isHovering ? hoveringColor : "#FF7A00",
-            width: textWidth ? `${textWidth}px` : "auto", // ✅ ensures equal character width
-            whiteSpace: "pre", // ✅ preserves spacing
+            width: textWidth ? `${textWidth}px` : "auto",
+            whiteSpace: "pre",
             display: "inline-block",
             textAlign: "left",
           }}
         >
-          {displayText}
+          {displayChars.join("")}
         </span>
       );
     }
@@ -140,12 +155,11 @@ export function TextScramble({
   return (
     <span onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
       {wrapped}
-      {/* hidden span for measuring text width */}
       <span
         ref={measureRef}
         className="invisible absolute whitespace-pre font-nb-architekt"
       >
-        {originalText}
+        {originalChars.join("")}
       </span>
     </span>
   );
