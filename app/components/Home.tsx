@@ -95,7 +95,7 @@ const Home = () => {
                               className="text-xs sm:text-base"
                               style={{ visibility: "hidden" }}
                             >
-                              <div> TO CYLA   </div>
+                              <div>TO CYLA   </div>
                             </div>
                           </div>
                           <svg
@@ -835,6 +835,7 @@ const Home = () => {
                   </p>
                   <div className="col-span-3 w-full border-b border-brand/30 p-2 pr-0">
                     <a rel="noopener noreferrer" target="_self" href="/CYLAger">
+                      <TextScramble>
                       <div className="w-full p-2 cursor-pointer flex justify-between items-center group hover:bg-brand rounded-sm hover:text-black transition">
                         <div style={{ position: "relative", width: "100%" }}>
                           <div
@@ -845,9 +846,9 @@ const Home = () => {
                               lineHeight: "clamp(24px, 5vw, 48px)",
                             }}
                           >
-                            <TextScramble>
-                              <div>EVOLUTION LOG</div>
-                            </TextScramble>{" "}
+                            {/* <TextScramble> */}
+                              <div>EVOLUTION </div>
+                            {/* </TextScramble>{" "} */}
                           </div>
                           <div
                             className="uppercase pr-2 font-nb-architekt"
@@ -857,9 +858,9 @@ const Home = () => {
                               lineHeight: "clamp(24px, 5vw, 48px)",
                             }}
                           >
-                            <TextScramble>
+                            {/* <TextScramble> */}
                               <div>LOG</div>
-                            </TextScramble>{" "}
+                            {/* </TextScramble>{" "} */}
                           </div>
                         </div>
                         <svg
@@ -912,9 +913,13 @@ const Home = () => {
                           </defs>
                         </svg>
                       </div>
+                      </TextScramble>
+
+                      
                     </a>
                   </div>
                 </div>
+                
                 <div
                   className="w-full sm:grid sm:grid-cols-4 justify-items-start sm:gap-x-4"
                   style={{ gridArea: "2 / 1 / 3 / 5" }}
@@ -928,6 +933,7 @@ const Home = () => {
                       target="_self"
                       href="/ai-agents"
                     >
+                            <TextScramble>
                       <div className="w-full p-2 cursor-pointer flex justify-between items-center group hover:bg-brand rounded-sm hover:text-black transition">
                         <div key={1} style={{ position: "relative" }}>
                           <div
@@ -939,9 +945,9 @@ const Home = () => {
                               color: "#FF7A00",
                             }}
                           >
-                            <TextScramble>
-                              <div>LEARNING INDEX </div>
-                            </TextScramble>
+                            {/* <TextScramble> */}
+                              LEARNING 
+                            {/* </TextScramble> */}
                           </div>
                           <div
                             className="uppercase pr-2 font-nb-architekt"
@@ -951,7 +957,7 @@ const Home = () => {
                               lineHeight: "clamp(24px, 5vw, 48px)",
                             }}
                           >
-                            LEARNING INDEX
+                            {""} INDEX
                           </div>
                         </div>
                         <svg
@@ -1004,6 +1010,7 @@ const Home = () => {
                           </defs>
                         </svg>
                       </div>
+                            </TextScramble>
                     </a>
                   </div>
                 </div>
@@ -1020,6 +1027,7 @@ const Home = () => {
                       target="_self"
                       href="/AGENT TASKS (COMING SOON)"
                     >
+                            <TextScramble>
                       <div className="w-full p-2 cursor-pointer flex justify-between items-center group hover:bg-brand rounded-sm hover:text-black transition">
                         <div style={{ position: "relative" }}>
                           <div
@@ -1030,9 +1038,8 @@ const Home = () => {
                               lineHeight: "clamp(24px, 5vw, 48px)",
                             }}
                           >
-                            <TextScramble>
-                              <div>AGENT TASKS (COMING SOON) </div>
-                            </TextScramble>
+                              <div>AGENT TASKS  </div>
+                        
                           </div>
                           <div
                             className="uppercase pr-2 font-nb-architekt"
@@ -1042,7 +1049,7 @@ const Home = () => {
                               lineHeight: "clamp(24px, 5vw, 48px)",
                             }}
                           >
-                            AGENT TASKS (COMING SOON)
+                            (COMING SOON)
                           </div>
                         </div>
                         <svg
@@ -1095,6 +1102,7 @@ const Home = () => {
                           </defs>
                         </svg>
                       </div>
+</TextScramble>
                     </a>
                   </div>
                 </div>
@@ -1111,6 +1119,8 @@ const Home = () => {
                       target="_self"
                       href="/OGINTEGRATIONS (COMING SOON)"
                     >
+                            <TextScramble>
+
                       <div className="w-full p-2 cursor-pointer flex justify-between items-center group hover:bg-brand rounded-sm hover:text-black transition">
                         <div style={{ position: "relative" }}>
                           <div
@@ -1121,9 +1131,7 @@ const Home = () => {
                               lineHeight: "clamp(24px, 5vw, 48px)",
                             }}
                           >
-                            <TextScramble>
-                              <div>INTEGRATIONS (COMING SOON) </div>
-                            </TextScramble>
+                              <div>INTEGRATIONS  </div>
                           </div>
                           <div
                             className="uppercase pr-2 font-nb-architekt"
@@ -1133,7 +1141,7 @@ const Home = () => {
                               lineHeight: "clamp(24px, 5vw, 48px)",
                             }}
                           >
-                            INTEGRATIONS (COMING SOON)
+                           (COMING SOON)
                           </div>
                         </div>
                         <svg
@@ -1186,6 +1194,7 @@ const Home = () => {
                           </defs>
                         </svg>
                       </div>
+                            </TextScramble>
                     </a>
                   </div>
                 </div>
@@ -1198,6 +1207,7 @@ const Home = () => {
                   </p>
                   <div className="col-span-3 w-full border-b border-brand/30 p-2 pr-0">
                     <a rel="noopener noreferrer" target="_self" href="/token">
+                            <TextScramble>
                       <div className="w-full p-2 cursor-pointer flex justify-between items-center group hover:bg-brand rounded-sm hover:text-black transition">
                         <div style={{ position: "relative" }}>
                           <div
@@ -1208,10 +1218,10 @@ const Home = () => {
                               lineHeight: "clamp(24px, 5vw, 48px)",
                             }}
                           >
-                            <TextScramble>
-                              <div></div>
-                              $CYLA TOKEN (COMING SOON)
-                            </TextScramble>
+                              <div>
+
+                              $CYLA TOKEN 
+                              </div>
                           </div>
                           <div
                             className="uppercase pr-2 font-nb-architekt"
@@ -1221,7 +1231,7 @@ const Home = () => {
                               lineHeight: "clamp(24px, 5vw, 48px)",
                             }}
                           >
-                            $CYLA TOKEN (COMING SOON)
+                            (COMING SOON)
                           </div>
                         </div>
                         <svg
@@ -1274,6 +1284,7 @@ const Home = () => {
                           </defs>
                         </svg>
                       </div>
+                      </TextScramble>
                     </a>
                   </div>
                 </div>

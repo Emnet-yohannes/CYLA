@@ -45,33 +45,36 @@ export function TextScramble({
     return ""
   }
 
-  const scrambleText = (text: string) => {
-    let iteration = 0
-    if (intervalRef.current) clearInterval(intervalRef.current)
+const scrambleText = (text: string) => {
+  let iteration = 0
+  if (intervalRef.current) clearInterval(intervalRef.current)
 
-    intervalRef.current = setInterval(() => {
-      const scrambled = text
-        .split("")
-        .map((char, index) =>
-          index < iteration ? char : getRandomChar()
-        )
-        .join("")
+  intervalRef.current = setInterval(() => {
+    const scrambled = text
+      .split("")
+      .map((char, index) => {
+        // ✅ Skip scrambling for spaces or any whitespace character
+        if (char.trim() === "") return char
+        return index < iteration ? char : getRandomChar()
+      })
+      .join("")
 
-      setDisplayText(scrambled.slice(0, text.length)) // ✅ always same length
-      iteration += 1 / 3
+    setDisplayText(scrambled.slice(0, text.length)) // ✅ always same length
+    iteration += 1 / 3
 
-      if (iteration >= text.length) {
-        clearInterval(intervalRef.current!)
-        setDisplayText(text)
-      }
-    }, 30)
-
-    if (timeoutRef.current) clearTimeout(timeoutRef.current)
-    timeoutRef.current = setTimeout(() => {
+    if (iteration >= text.length) {
+      clearInterval(intervalRef.current!)
       setDisplayText(text)
-      if (intervalRef.current) clearInterval(intervalRef.current)
-    }, (scrambleDuration + revealDuration) * 1000)
-  }
+    }
+  }, 30)
+
+  if (timeoutRef.current) clearTimeout(timeoutRef.current)
+  timeoutRef.current = setTimeout(() => {
+    setDisplayText(text)
+    if (intervalRef.current) clearInterval(intervalRef.current)
+  }, (scrambleDuration + revealDuration) * 1000)
+}
+
 
   const handleMouseEnter = () => {
     setIsHovering(true)
