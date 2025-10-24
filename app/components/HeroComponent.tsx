@@ -68,7 +68,7 @@ const HeroComponent = () => {
               rel="noreferrer noopener"
             >
               <TextScramble>
-                <button className=" font-nb-architekt inline-flex items-center justify-center rounded-md text-sm font-normal ring-offset-background transition-colors focus-visible:outline-none outline-none focus-visible:ring-1 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-brand/80 text-black bg-background hover:!bg-brand hover:!text-black dark:text-brand px-4 py-2 space-x-2 h-[46px] !text-base">
+                <button className=" font-nb-architekt inline-flex items-center justify-center rounded-md text-sm font-normal ring-offset-background transition-colors focus-visible:outline-none outline-none focus-visible:ring-1 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-brand/80 text-black bg-background hover:!bg-brand hover:!text-black dark:text-brand px-4 py-2 space-x-2 gap-x-6 h-[46px] !text-base">
                   <div style={{ position: "relative" }}>
                     <div style={{ position: "absolute" }}>
                       <div>LAUNCH </div>
