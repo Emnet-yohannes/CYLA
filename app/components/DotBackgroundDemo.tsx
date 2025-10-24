@@ -82,7 +82,7 @@ export default function DotBackgroundDemo() {
 
           if (distSq < repulsionRadius && distSq > 0) {
             const angle = Math.atan2(dy, dx)
-            const force = (-40000 / distSq) * 0.8
+            const force = (-280000 / distSq) * 1
             dot.vx += force * Math.cos(angle)
             dot.vy += force * Math.sin(angle)
           }
