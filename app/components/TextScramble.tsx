@@ -56,7 +56,7 @@ export function TextScramble({
     let progress = 0;
     const totalSteps = chars.length;
     const scrambleStepTime = (scrambleDuration * 1000) / totalSteps;
-    const revealStepTime = (revealDuration * 1000) / totalSteps;
+    const revealStepTime = (revealDuration * 3000) / totalSteps;
 
     setDisplayChars(Array.from(chars, (char) => (char.trim() === "" ? char : getRandomChar())));
 
