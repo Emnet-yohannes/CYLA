@@ -20,8 +20,12 @@ export default function RealTimeClock() {
   }, []);
 
   return (
-    <div style={{ position: "absolute", width: "100px" }}>
-      <TextScramble hoveringColor="#FF7A00">{time}</TextScramble>
+    <div style={{ position: "relative" }}>
+      <div style={{ position: "absolute" }} className="min-w-[100px]">
+        <TextScramble hoveringColor="#FF7A00">
+          <div>{"--" + time}</div>
+        </TextScramble>
+      </div>
     </div>
   );
 }
