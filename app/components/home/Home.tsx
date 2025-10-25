@@ -34,7 +34,7 @@ const HomeComponent = () => {
       </section>
 
       {/* 💡 Rest of page scrolls normally */}
-      <main className="relative overflow-hidden z-10 w-11/12 mx-auto ">
+      <main className="relative z-10 w-11/12 mx-auto ">
         <TwoCirclesBar />
         <ProductSuite />
         <TwoCirclesBar />
