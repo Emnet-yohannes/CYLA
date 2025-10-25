@@ -4,26 +4,19 @@ import HomeHeader from "./HomeHeader";
 import Footer from "./Footer";
 import HeroComponent from "./HeroComponent";
 import ProductSuite from "./ProductSuite";
+import TwoCirclesBar from "./TwoCirclesBar";
 
-const TwoCirclesBar: React.FC = () => {
-  return (
-    <div className="w-full py-8 flex justify-center items-center">
-      <div className="rounded-full bg-brand/20 w-20 h-20 mr-4" />
-      <div className="rounded-full bg-brand/40 w-20 h-20" />
-    </div>
-  );
-};
 
 const HomeComponent = () => {
   return (
     <div className="relative min-h-screen overflow-x-hidden">
-      {/* 🌄 Hero section with video background */}
+      {/*  Hero section with video background */}
       <section className="relative w-full min-h-screen overflow-hidden">
-        {/* 🎥 Background video */}
-        <div className="absolute inset-0 z-0 overflow-hidden">
+        {/* Background video */}
+        <div className="absolute inset-0 z-10 overflow-hidden">
           <video
             className="w-full h-full object-cover"
-            src="/videos/cyla_background.mp4"
+            src="/videos/home_bg.mp4"
             autoPlay
             muted
             loop
@@ -41,7 +34,7 @@ const HomeComponent = () => {
       </section>
 
       {/* 💡 Rest of page scrolls normally */}
-      <main className="relative overflow-hidden z-10 w-11/12 mx-auto">
+      <main className="relative overflow-hidden z-10 w-11/12 mx-auto ">
         <TwoCirclesBar />
         <ProductSuite />
         <TwoCirclesBar />

@@ -96,7 +96,7 @@ const ProductSuite = () => {
   ]
 
   return (
-    <div className=" w-full py-20!">
+    <div className=" w-full py-0! md:py-0!">
       <div className="w-full flex flex-col items-start sm:grid justify-items-start sm:grid-cols-4 sm:grid-rows-2 sm:gap-4">
         <p
           className="text-xs text-brand sm:justify-self-end"
@@ -148,25 +148,28 @@ const ProductSuite = () => {
             </p>
             <div className="col-span-3 w-full border-b border-brand/30 p-2 pr-0">
               <a className="w-full active:bg-brand active:text-black" href={item.link} target="_self" rel="noopener noreferrer">
-                <TextScramble>
-                  <div className="border-8 w-full p-2 cursor-pointer flex items-center group hover:bg-brand rounded-sm hover:text-black transition relative">
-                    <div
-                      className="uppercase pr-2 font-nb-architekt flex-1"
-                      style={{
-                        fontSize: "clamp(10px, 5vw, 48px)",
-                        lineHeight: "clamp(24px, 5vw, 48px)",
-                      }}
-                    >
-                      <div>{item.title}</div>
-                    </div>
-                    <ArrowRightIcon
-                      width="24"
-                      height="41"
-                      fill="currentColor"
-                      className="ml-auto"
-                    />
-                  </div>
-                </TextScramble>
+                <div className="border-8 w-full p-2 cursor-pointer flex items-center group hover:bg-brand rounded-sm hover:text-black transition relative">
+  {/* Title only wrapped in TextScramble */}
+  <div
+    className="uppercase pr-2 font-nb-architekt flex-1"
+    style={{
+      fontSize: "clamp(10px, 5vw, 48px)",
+      lineHeight: "clamp(24px, 5vw, 48px)",
+    }}
+  >
+    <TextScramble>
+      <div>{item.title}</div>
+    </TextScramble>
+  </div>
+
+  <ArrowRightIcon
+    width="24"
+    height="41"
+    fill="currentColor"
+    className="ml-auto"
+  />
+</div>
+
               </a>
             </div>
           </div>

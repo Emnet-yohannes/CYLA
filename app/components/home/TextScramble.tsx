@@ -108,6 +108,7 @@ const scrambleRevealLeftToRight = (text: string) => {
 
   useEffect(() => {
     const text = extractText(children);
+    console.log(text,'the text')
     const chars = text.split("");
     setOriginalChars(chars);
     setDisplayChars(chars);

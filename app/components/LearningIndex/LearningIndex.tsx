@@ -6,18 +6,19 @@ const LearningIndex = () => {
   return (
     <div className=" !pt-12">
       <div
-        className=" flex flex-col w-full justify-start relative pb-24 sm:pb-0 z-0"
+        className=" flex flex-col w-full justify-start relative pb-0! md:pb-0! sm:pb-0 z-0"
         style={{ minHeight: "calc(-218px + 100vh)" }}
       >
         <div style={{ position: "relative" }}>
           {/* Visible title */}
           <TextScramble hoveringColor="#FF7A00">
             <div
-              className="uppercase text-black dark:text-brand mt-4 font-nb-architekt"
+              className=" uppercase text-black dark:text-brand mt-4 font-nb-architekt"
               style={{
-                position: "absolute",
-                fontSize: "clamp(32px, 5vw, 56px)",
+                  position: "absolute",
+                  fontSize: "clamp(24px, 5vw, 56px)",
                 lineHeight: "clamp(32px, 5vw, 56px)",
+                wordBreak: "break-word",
               }}
             >
               Agentic AI Tiers &amp; Utility
@@ -29,7 +30,7 @@ const LearningIndex = () => {
             className="uppercase text-black dark:text-brand mt-4 font-nb-architekt"
             style={{
               visibility: "hidden",
-              fontSize: "clamp(32px, 5vw, 56px)",
+              fontSize: "clamp(24px, 5vw, 56px)",
               lineHeight: "clamp(32px, 5vw, 56px)",
             }}
           >
@@ -74,7 +75,7 @@ const LearningIndex = () => {
               </div>
               <div className="w-full flex justify-center">
                 <a
-                  href="https://waye.ai/contact"
+                  href="https://cyla.vercel.app/contact"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -131,7 +132,7 @@ const LearningIndex = () => {
               </div>
               <div className="w-full flex justify-center">
                 <a
-                  href="https://waye.ai/contact"
+                  href="https://cyla.vercel.app/contact"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -185,7 +186,7 @@ const LearningIndex = () => {
               </div>
               <div className="w-full flex justify-center">
                 <a
-                  href="https://waye.ai/contact"
+                  href="https://cyla.vercel.app/contact"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -239,7 +240,7 @@ const LearningIndex = () => {
               </div>
               <div className="w-full flex justify-center mt-auto">
                 <a
-                  href="https://waye.ai/contact"
+                  href="https://cyla.vercel.app/contact"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

@@ -3,6 +3,7 @@ import LearningIndex from "../components/LearningIndex/LearningIndex";
 import HomeHeader from "../components/home/HomeHeader";
 import HomeBanner from "../components/home/HomeBanner";
 import Footer from "../components/home/Footer";
+import DotBackground from "../components/DotBackground";
 
 const page = () => {
   const currentDate = new Date();
@@ -12,7 +13,9 @@ const page = () => {
 
   return (
     <div>
-      <div className="relative z-10 ">
+              <DotBackground />
+        
+      <div className="relative z-10 overflow-x-hidden">
         <HomeBanner offerExpirationDate={offerExpirationDate} />
         <div className="w-[97%]  mx-auto ">
           <HomeHeader />

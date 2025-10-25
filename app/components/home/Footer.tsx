@@ -4,7 +4,7 @@ import { TextScramble } from "./TextScramble";
 
 const Footer = () => {
   return (
-    <footer className="w-full relative pb-4 sm:pb-24 sm:mt-40 mt-28 overflow-x-hidden">
+    <footer className="w-full relative pb-4 sm:pb-24 sm:mt-16! mt-14! overflow-x-hidden">
       <div className="relative">
         <div className="grid relative md:grid-cols-12 sm:grid-cols-2 grid-cols-1 gap-4 border-t border-dashed border-brand/30 p-4">
           <div className="md:col-span-4">

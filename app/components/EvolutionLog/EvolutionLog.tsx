@@ -1,19 +1,19 @@
 "use client";
-
 import { useEffect, useRef } from "react";
 import { Terminal } from "@xterm/xterm";
-// @ts-ignore: Ignore missing type declarations for side-effect CSS import
+// @ts-ignore
 import "@xterm/xterm/css/xterm.css";
 
 export default function EvolutionLog() {
   const terminalRef = useRef<HTMLDivElement>(null);
   const term = useRef<Terminal | null>(null);
-  
+
   const logs = [
     { time: "10:02:11", message: "Starting build...", type: "info" },
     { time: "10:02:13", message: "Fetching dependencies...", type: "info" },
     { time: "10:02:15", message: "Warning: deprecated package found", type: "warn" },
     { time: "10:02:18", message: "Build completed successfully ✅", type: "success" },
+    
   ];
 
   useEffect(() => {
@@ -21,17 +21,20 @@ export default function EvolutionLog() {
 
     term.current = new Terminal({
       theme: {
-        background: "#1e1e1e",
+        background: "#0f1214",
         foreground: "#d1d5db",
         cursor: "#00ff88",
       },
       fontFamily: "Menlo, Monaco, 'Courier New', monospace",
       fontSize: 14,
       cursorBlink: true,
-      rows: 20,
+      scrollback: 1000,
+      
     });
 
     term.current.open(terminalRef.current);
+    term.current.writeln("\x1b[32mcyla@evolutionlog:\x1b[36m~\x1b[0m$ tail -f actions.log");
+    term.current.writeln("");
 
     let index = 0;
     const interval = setInterval(() => {
@@ -39,14 +42,11 @@ export default function EvolutionLog() {
         clearInterval(interval);
         return;
       }
-
       const { time, message, type } = logs[index];
-      let color = "\x1b[37m"; // default white
-
-      if (type === "warn") color = "\x1b[33m"; // yellow
-      if (type === "error") color = "\x1b[31m"; // red
-      if (type === "success") color = "\x1b[32m"; // green
-
+      let color = "\x1b[37m";
+      if (type === "warn") color = "\x1b[33m";
+      if (type === "error") color = "\x1b[31m";
+      if (type === "success") color = "\x1b[32m";
       term.current?.writeln(`${color}[${time}] ${message}\x1b[0m`);
       index++;
     }, 800);
@@ -58,19 +58,22 @@ export default function EvolutionLog() {
   }, []);
 
   return (
+    <div className="w-full md:!w-[62%] mx-auto md:my-24 bg-[#0f1214] rounded-lg overflow-hidden border !border-[#1a1d1f] shadow-md">
+      {/* Terminal top bar */}
+      <div className="flex items-center gap-2 px-3 py-2 bg-[#1a1d1f] sticky top-0 z-10">
+        <div className="w-3 h-3 rounded-full bg-red-500" />
+        <div className="w-3 h-3 rounded-full bg-yellow-400" />
+        <div className="w-3 h-3 rounded-full bg-green-500" />
+      </div>
 
-    <div
-  className="rounded-lg overflow-hidden w-2/3 mx-auto my-8 "
-  
->
-  <div className="flex items-center gap-2 px-3 py-2 bg-[#2b2b2b]">
-    <div className="w-3 h-3 rounded-full bg-red-500" />
-    <div className="w-3 h-3 rounded-full bg-yellow-400" />
-    <div className="w-3 h-3 rounded-full bg-green-500" />
-  </div>
+      {/* Sticky path header */}
+     
 
-  <div ref={terminalRef} className="h-[400px] p-2 bg-transparent" />
-</div>
-
+      {/* Scrollable terminal output */}
+      <div
+        ref={terminalRef}
+        className="max-h-[400px]  p-2 font-mono text-gray-200"
+      />
+    </div>
   );
 }

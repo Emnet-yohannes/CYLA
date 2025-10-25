@@ -1,7 +1,9 @@
 "use client";
 import { useEffect, useRef } from "react";
-
-export default function DotBackground() {
+interface DotBackgroundProps {
+  bg?: boolean;
+}
+export default function DotBackground({bg = true}:DotBackgroundProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const offscreenCanvasRef = useRef<HTMLCanvasElement | null>(null);
 
@@ -102,7 +104,7 @@ export default function DotBackground() {
   }, []);
 
   return (
-    <div className="fixed inset-0 z-0 overflow-hidden bg-black">
+    <div className={`fixed inset-0 z-0 overflow-hidden ${bg ? 'bg-black' : 'bg-transparent'} `}>
       <canvas
         ref={canvasRef}
         className="absolute inset-0 w-full h-full pointer-events-none"
