@@ -1,6 +1,6 @@
 import DotBackground2 from "../components/DotBackground2";
-import HomeComponent from "../components/Home";
-import HomeBanner from "../components/HomeBanner";
+import HomeComponent from "../components/home/Home";
+import HomeBanner from "../components/home/HomeBanner";
 export default function Home() {
   const currentDate = new Date();
   const offerExpirationDate = new Date(currentDate.getTime() + 14 * 24 * 60 * 60 * 1000);
