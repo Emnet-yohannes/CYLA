@@ -3,7 +3,7 @@ import React from "react";
 const BannerAutoScroll = () => {
   return (
     <div>
-      <div className="absolute bottom-0 sm:bottom-24! left-0 right-0 overflow-hidden py-4 space-y-8">
+      <div className="absolute bottom-0 sm:bottom-24! left-0 right-0 overflow-hidden py-0! space-y-8">
         <p
           className="text-white max-w-[550px] text-center px-4 font-nb-architekt mx-auto"
           style={{

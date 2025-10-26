@@ -26,13 +26,13 @@ const Page = () => {
       <div className="relative overflow-x-hidden  h-screen overflow-y-scroll scroll-smooth">
         {/* ----- Header (Sticky if desired) ----- */}
         <div>
-          <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 z-0 mt-80! md:mt-45! w-[88vw] mx-auto">
             <Image
               src="/images/cyla_evolution_bg.png"
               alt="Cyla Evolution Background"
               fill
               priority
-              className="object-cover object-center"
+              className="object-top"
             />
           </div>
           <div className="absolute w-full top-0 z-30 bg-transparent">
@@ -52,7 +52,7 @@ const Page = () => {
 
         {/* ----- Section 2: Evolution Log (scroll-snap starts) ----- */}
         <div className=" snap-y snap-proximity">
-          <section className="snap-start h-screen flex items-center justify-center">
+          <section className="px-3 snap-start h-screen flex items-center justify-center">
             <EvolutionLog />
           </section>
         </div>
