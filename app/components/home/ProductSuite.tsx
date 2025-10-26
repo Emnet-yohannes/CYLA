@@ -79,19 +79,19 @@ const ProductSuite = () => {
 
 
     {
-      title: "AGENT TASKS (COMING SOON)",
+      title: "$CYLA Token (Soon)",
       description: "(COMING SOON)",
-      link: "/AGENT TASKS (COMING SOON)",
+      link: "/CYLAToken",
     },
     {
-      title: "INTEGRATIONS (COMING SOON)",
+      title: "Integrations (Soon)",
       description: "(COMING SOON)",
-      link: "/OGINTEGRATIONS (COMING SOON)",
+      link: "/Integrations",
     },
     {
-      title: "$CYLA TOKEN (COMING SOON)",
+      title: "Agent Tasks (Soon)",
       description: "(COMING SOON)",
-      link: "/token",
+      link: "/AgentTasks",
     },
   ]
 

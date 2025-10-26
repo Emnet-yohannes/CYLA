@@ -58,7 +58,7 @@ export default function EvolutionLog() {
   }, []);
 
   return (
-    <div className="w-full md:!w-[62%] mx-auto md:my-24 bg-[#0f1214] rounded-lg overflow-hidden border !border-[#1a1d1f] shadow-md">
+    <div className="z-20! w-full md:!w-[62%] mx-auto md:my-0! bg-[#0f1214] rounded-lg overflow-hidden border !border-[#1a1d1f] shadow-md">
       {/* Terminal top bar */}
       <div className="flex items-center gap-2 px-3 py-2 bg-[#1a1d1f] sticky top-0 z-10">
         <div className="w-3 h-3 rounded-full bg-red-500" />

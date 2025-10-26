@@ -153,7 +153,7 @@ const Footer = () => {
                     style={{ position: "absolute" }}
                   >
                     <TextScramble hoveringColor="#FF7A00">
-                      <div>Products &amp; Services</div>
+                      <div>SYSTEM INDEX</div>
                     </TextScramble>
                   </div>
                   <div
@@ -162,50 +162,37 @@ const Footer = () => {
                   >
                     <TextScramble hoveringColor="#FF7A00">
                       <div></div>
-                      Products &amp; Services
+                      SYSTEM INDEX
                     </TextScramble>
                   </div>
                 </div>
-                <a className="w-fit mt-1" href="/CYLA">
+                <a className="w-fit mt-1" href="/EvolutionLog">
                   <p className="text-[11px] sm:text-xs hover:text-white font-at-hauss-aero hover:font-at-hauss-aero-semibold">
-                    CYLA
+                    Evolution Log
                   </p>
                 </a>
-                <a className="w-fit mt-1" href="/ai-agents">
+                
+                <a className="w-fit mt-1" href="/LearningIndex">
                   <p className="text-[11px] sm:text-xs hover:text-white font-at-hauss-aero hover:font-at-hauss-aero-semibold">
-                    AI Agent Launchpad
+                    Learning Index
                   </p>
                 </a>
-                <a className="w-fit mt-1" href="/CYLA">
+                <a className="w-fit mt-1" href="/CYLAToken">
                   <p className="text-[11px] sm:text-xs hover:text-white font-at-hauss-aero hover:font-at-hauss-aero-semibold">
-                    Orbu.AI prediction game
+                    $CYLA Token (Soon)
                   </p>
                 </a>
-                <a className="w-fit mt-1" href="/OGBattlefront">
+                <a className="w-fit mt-1" href="/Integrations">
                   <p className="text-[11px] sm:text-xs hover:text-white font-at-hauss-aero hover:font-at-hauss-aero-semibold">
-                    The OG Battlefront
+                    Integrations (Soon)
                   </p>
                 </a>
-                <a className="w-fit mt-1" href="/OGINTEGRATIONS (COMING SOON)">
+                <a className="w-fit mt-1" href="/AgentTasks">
                   <p className="text-[11px] sm:text-xs hover:text-white font-at-hauss-aero hover:font-at-hauss-aero-semibold">
-                    Collectibles
+                    Agent Tasks (Soon)
                   </p>
                 </a>
-                <a className="w-fit mt-1" href="/token">
-                  <p className="text-[11px] sm:text-xs hover:text-white font-at-hauss-aero hover:font-at-hauss-aero-semibold">
-                    $CYLA arcade token
-                  </p>
-                </a>
-                <a
-                  href="https://web-ogs.com"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="w-fit mt-1"
-                >
-                  <p className="text-[11px] sm:text-xs hover:text-white font-at-hauss-aero hover:font-at-hauss-aero-semibold">
-                    web-OGs
-                  </p>
-                </a>
+                
               </div>
               <div className="flex flex-col gap-2 pl-2 xs:pl-8 sm:pl-0 md:pl-8">
                 <div style={{ position: "relative" }}>
