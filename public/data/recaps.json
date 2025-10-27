@@ -1,0 +1,22 @@
+[
+  {
+    "day": 1,
+    "title": "Gravity Basics",
+    "description": "Cyla learned about gravity today — the force that attracts two bodies toward each other. We tried a few small experiments and recorded the results."
+  },
+  {
+    "day": 2,
+    "title": "Neural Nets Intro",
+    "description": "Introduced to neural networks: what neurons, layers, and weights are. Cyla trained a tiny model to recognize basic patterns."
+  },
+  {
+    "day": 3,
+    "title": "Motion Laws",
+    "description": "Studied Newton's laws of motion and observed how forces affect object movement. Built a small simulation."
+  },
+  {
+    "day": 7,
+    "title": "Dataset Cleanup",
+    "description": "Cleaned and normalized a dataset — dropped nulls, standardized formats, and logged data quality metrics."
+  }
+]

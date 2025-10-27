@@ -4,7 +4,7 @@ import Footer from "../home/Footer";
 
 const LearningIndex = () => {
   return (
-    <div className=" !pt-12">
+    <div className=" !pt-12 pb-24!">
       <div
         className=" flex flex-col w-full justify-start relative pb-0! md:pb-0! sm:pb-0 z-0"
         style={{ minHeight: "calc(-218px + 100vh)" }}
@@ -21,7 +21,7 @@ const LearningIndex = () => {
                 wordBreak: "break-word",
               }}
             >
-              Agentic AI Tiers &amp; Utility
+              TO LEARNING INDEX // v1.0-BETA
             </div>
           </TextScramble>
 
@@ -34,15 +34,12 @@ const LearningIndex = () => {
               lineHeight: "clamp(32px, 5vw, 56px)",
             }}
           >
-            Agentic AI Tiers &amp; Utility
+            TO LEARNING INDEX // v1.0-BETA
           </div>
         </div>
 
         <p className="mt-4 mb-6 md:text-lg">
-          Deploy AI agent teams to automate operations, engage customers, and
-          scale revenue.
-          <br />
-          Enterprise-grade AI workforce solutions for serious business growth.
+          Tracking Cyla’s growth across the Solana ecosystem.
         </p>
 
         {/* Cards grid */}
@@ -104,9 +101,9 @@ const LearningIndex = () => {
 
           {/* Growth */}
           <div className="border border-primary rounded-md group bg-black z-10 relative flex flex-col">
-            <div className="bg-primary absolute top-0 left-0 w-full p-1 rounded-t-sm z-20">
+            {/* <div className="bg-primary absolute top-0 left-0 w-full p-1 rounded-t-sm z-20">
               <p className="text-center text-black">Popular</p>
-            </div>
+            </div> */}
             <div className="relative">
               <img
                 alt="Pro"

@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div className="">
       <DotBackground />
-      <HomeBanner offerExpirationDate={offerExpirationDate} />
+      {/* <HomeBanner offerExpirationDate={offerExpirationDate} /> */}
       <HomeComponent />
     </div>
   );

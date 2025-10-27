@@ -26,7 +26,7 @@ const Page = () => {
       <div className="relative overflow-x-hidden  h-screen overflow-y-scroll scroll-smooth">
         {/* ----- Header (Sticky if desired) ----- */}
         <div>
-          <div className="absolute inset-0 z-0 mt-80! md:mt-45! w-[88vw] mx-auto">
+          {/* <div className="absolute inset-0 z-0 mt-80! md:mt-45! w-[88vw] mx-auto">
             <Image
               src="/images/cyla_evolution_bg.png"
               alt="Cyla Evolution Background"
@@ -34,9 +34,19 @@ const Page = () => {
               priority
               className="object-top"
             />
-          </div>
+          </div> */}
+          <div className="absolute inset-0 z-0 mt-60! md:mt-40! w-full md:w-[78vw] mx-auto">
+          <video
+            className="object-top"
+            src="/videos/evolution_index.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
+          />
+        </div>
           <div className="absolute w-full top-0 z-30 bg-transparent">
-            <HomeBanner offerExpirationDate={offerExpirationDate} />
+            {/* <HomeBanner offerExpirationDate={offerExpirationDate} /> */}
             <div className="w-[97%] mx-auto ">
               <HomeHeader />
             </div>
@@ -45,7 +55,7 @@ const Page = () => {
           {/* ----- Home Banner ----- */}
 
           {/* ----- Section 1: Banner Auto Scroll (Hero) ----- */}
-          <section className="h-screen flex items-center justify-center">
+          <section className="h-[65vh] md:h-screen flex items-center justify-center">
             <BannerAutoScroll />
           </section>
         </div>

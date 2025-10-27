@@ -4,6 +4,7 @@ import HomeHeader from "../components/home/HomeHeader";
 import HomeBanner from "../components/home/HomeBanner";
 import Footer from "../components/home/Footer";
 import DotBackground from "../components/DotBackground";
+import CalendarGrid from "../components/LearningIndex/CalendarGrid";
 
 const page = () => {
   const currentDate = new Date();
@@ -16,11 +17,12 @@ const page = () => {
               <DotBackground />
         
       <div className="relative z-10 overflow-x-hidden">
-        <HomeBanner offerExpirationDate={offerExpirationDate} />
+        {/* <HomeBanner offerExpirationDate={offerExpirationDate} /> */}
         <div className="w-[97%]  mx-auto ">
           <HomeHeader />
           <LearningIndex />
-        <Footer />
+        {/* <Footer /> */}
+        <CalendarGrid />
         </div>
 
       </div>
