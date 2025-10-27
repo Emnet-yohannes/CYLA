@@ -2,14 +2,12 @@ import React from "react";
 import { TextScramble } from "./TextScramble";
 import Link from "next/link";
 
-const ArrowRightIcon = (
-  props: {
-    className?: string;
-    width?: string;
-    height?: string;
-    fill?: string;
-  }
-) => {
+const ArrowRightIcon = (props: {
+  className?: string;
+  width?: string;
+  height?: string;
+  fill?: string;
+}) => {
   return (
     <svg
       width={props.width || "24"}
@@ -60,8 +58,8 @@ const ArrowRightIcon = (
         </clipPath>
       </defs>
     </svg>
-  )
-}
+  );
+};
 
 const ProductSuite = () => {
   const productSuiteItems = [
@@ -76,7 +74,6 @@ const ProductSuite = () => {
       description: "INDEX",
       link: "/LearningIndex",
     },
-
 
     {
       title: "$CYLA Token (Soon)",
@@ -93,7 +90,7 @@ const ProductSuite = () => {
       description: "(COMING SOON)",
       link: "/AgentTasks",
     },
-  ]
+  ];
 
   return (
     <div className=" w-full py-0! md:py-0!">
@@ -147,29 +144,33 @@ const ProductSuite = () => {
               &lt;0{index + 1}&gt;
             </p>
             <div className="col-span-3 w-full border-b border-brand/30 p-2 pr-0">
-              <a className="w-full active:bg-brand active:text-black" href={item.link} target="_self" rel="noopener noreferrer">
+              <a
+                className="w-full active:bg-brand active:text-black"
+                href={item.link}
+                target="_self"
+                rel="noopener noreferrer"
+              >
                 <div className="border-8 w-full p-2 cursor-pointer flex items-center group hover:bg-brand rounded-sm hover:text-black transition relative">
-  {/* Title only wrapped in TextScramble */}
-  <div
-    className="uppercase pr-2 font-nb-architekt flex-1"
-    style={{
-      fontSize: "clamp(10px, 5vw, 48px)",
-      lineHeight: "clamp(24px, 5vw, 48px)",
-    }}
-  >
-    <TextScramble>
-      <div>{item.title}</div>
-    </TextScramble>
-  </div>
+                  {/* Title only wrapped in TextScramble */}
+                  <div
+                    className="uppercase pr-2 font-nb-architekt flex-1"
+                    style={{
+                      fontSize: "clamp(10px, 5vw, 48px)",
+                      lineHeight: "clamp(24px, 5vw, 48px)",
+                    }}
+                  >
+                    <TextScramble>
+                      <div>{item.title}</div>
+                    </TextScramble>
+                  </div>
 
-  <ArrowRightIcon
-    width="24"
-    height="41"
-    fill="currentColor"
-    className="ml-auto"
-  />
-</div>
-
+                  <ArrowRightIcon
+                    width="24"
+                    height="41"
+                    fill="currentColor"
+                    className="ml-auto"
+                  />
+                </div>
               </a>
             </div>
           </div>

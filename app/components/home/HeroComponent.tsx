@@ -60,7 +60,7 @@ const HeroComponent = () => {
           </ScrollDirectionContent>
         </div>
 
-        <div className="flex justify-center md:justify-end ">
+        {/* <div className="flex justify-center md:justify-end ">
           <div className="flex flex-col font-light pt-8 w-auto sm:w-[480px] items-end md:items-end space-y-4 group px-4 sm:px-0">
             <a
               href="https://app.CYLA.ai"
@@ -101,7 +101,7 @@ const HeroComponent = () => {
               </TextScramble>
             </a>
           </div>
-        </div>
+        </div> */}
       </div>
 
       <div className="absolute bottom-16 sm:bottom-24 left-1/2 -translate-x-1/2">

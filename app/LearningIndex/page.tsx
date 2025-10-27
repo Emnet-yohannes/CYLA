@@ -22,6 +22,18 @@ const page = () => {
           <HomeHeader />
           <LearningIndex />
         {/* <Footer /> */}
+        <div className=" w-full ">
+          <div
+              className="text-center uppercase text-black dark:text-brand mt-4 mb-8! font-nb-architekt"
+              style={{
+                  fontSize: "clamp(24px, 5vw, 56px)",
+                lineHeight: "clamp(32px, 5vw, 56px)",
+                wordBreak: "break-word",
+              }}
+            >
+              DAILY RECAP
+            </div>
+        </div>
         <CalendarGrid />
         </div>
 

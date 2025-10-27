@@ -35,7 +35,7 @@ const Page = () => {
               className="object-top"
             />
           </div> */}
-          <div className="absolute inset-0 z-0 mt-60! md:mt-40! w-full md:w-[78vw] mx-auto">
+          <div className="absolute inset-0 z-0 mt-60! md:mt-36! w-full md:w-[74vw]! mx-auto">
           <video
             className="object-top"
             src="/videos/evolution_index.mp4"

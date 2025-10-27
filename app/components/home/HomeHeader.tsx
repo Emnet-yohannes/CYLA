@@ -5,10 +5,13 @@ import { TextScramble } from "./TextScramble";
 import Link from "next/link";
 import RealTimeClock from "./RealTimeClock";
 import { useState } from "react";
-
+import { useRouter } from 'next/navigation';
 const HomeHeader = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-
+  const router = useRouter();
+  const handleGoHome = () => {
+    router.push('/'); // Navigates to the home page
+  };
   return (
     <header className="w-full">
       <div>
@@ -20,7 +23,8 @@ const HomeHeader = () => {
                   fontWeight: "bold",
                   fontSize: "16px",
                 }}
-                className="font-nb-architekt text-base font-normal text-[#FF7A00]"
+                onClick={handleGoHome}
+                className="cursor-pointer font-nb-architekt text-base font-normal text-[#FF7A00]"
               >
                 CYLA
                 <div>{`//online`}</div>
@@ -28,8 +32,8 @@ const HomeHeader = () => {
               <div className="flex space-x-4 sm:space-x-0 items-center ">
                 <div className="space-x-6 sm:flex hidden items-center"></div>
                 <div className="space-x-4">
-                  <a
-                    href="https://app.CYLA.ai"
+                  <Link
+                    href="/EvolutionLog"
                     target="_blank"
                     rel="noreferrer noopener"
                     className="hidden sm:inline-block group"
@@ -41,13 +45,13 @@ const HomeHeader = () => {
                             style={{ position: "absolute" }}
                             className="text-base"
                           >
-                            <div>LAUNCH </div>
+                            <div>OPEN </div>
                           </div>
                           <div
                             className="text-base"
                             style={{ visibility: "hidden" }}
                           >
-                            <div>CYLA </div>
+                            <div>EVOLUTION LOG </div>
                           </div>
                         </div>
                         <svg
@@ -72,9 +76,9 @@ const HomeHeader = () => {
                         </svg>
                       </button>
                     </TextScramble>
-                  </a>
-                  <a
-                    href="https://app.CYLA.ai/CYLAger"
+                  </Link>
+                  <Link
+                    href="/LearningIndex"
                     target="_blank"
                     rel="noreferrer noopener"
                     className="group"
@@ -86,13 +90,13 @@ const HomeHeader = () => {
                             style={{ position: "absolute" }}
                             className="text-xs sm:text-base"
                           >
-                            <div>TALK </div>
+                            <div>OPEN </div>
                           </div>
                           <div
                             className="text-xs sm:text-base"
                             style={{ visibility: "hidden" }}
                           >
-                            <div>TO CYLA </div>
+                            <div>LEARNING INDEX </div>
                           </div>
                         </div>
                         <svg
@@ -129,7 +133,7 @@ const HomeHeader = () => {
                         </svg>
                       </button>
                     </TextScramble>
-                  </a>
+                  </Link>
                 </div>
                 <div className="flex">
                   {/* Mobile Drawer button */}
@@ -431,7 +435,7 @@ const HomeHeader = () => {
         </div>
       </div>
       <div className="">
-        <div className="flex flex-col  md:flex-row justify-between items-center py-2 px-4">
+        <div className="flex flex-col  md:flex-row justify-between items-center py-2 px-4 mr-8">
           <div className="Home_welcome__Qxzze text-sm">
             <div style={{ position: "relative" }}>
               <div style={{ position: "absolute" }} className="min-w-[120px]">
@@ -460,12 +464,12 @@ const HomeHeader = () => {
             <div style={{ position: "relative" }}>
               <div style={{ position: "absolute" }} className="min-w-[120px]">
                 <TextScramble hoveringColor="#FF7A00">
-                  <div>[ learning solana — v1.0-bet ] </div>
+                  <div>[ LEARNING SOLANA - V1.0-BETA ]</div>
                 </TextScramble>
               </div>
               <div className="min-w-[120px]" style={{ visibility: "hidden" }}>
                 <TextScramble>
-                  <div>[ learning solana — v1.0-bet ] </div>
+                  <div>[ LEARNING SOLANA - V1.0-BETA ]</div>
                 </TextScramble>
               </div>
             </div>

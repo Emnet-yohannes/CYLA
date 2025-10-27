@@ -10,7 +10,7 @@ const Footer = () => {
           <div className="md:col-span-4">
             <div className="space-y-4">
               <Link href="/">
-                <svg
+                {/* <svg
                   width="800"
                   height="727"
                   viewBox="0 0 800 727"
@@ -24,11 +24,19 @@ const Footer = () => {
                                                     725.508 187.127 725.646C184.335 726.075 181.48 725.839 178.796 724.957C176.112 724.076 173.675 722.574 171.682 720.574L30.3329 578.732Z"
                     fill="currentColor"
                   ></path>
-                </svg>
+                </svg> */}
+                <img
+                alt="Pro"
+                loading="lazy"
+                decoding="async"
+                className="object-cover rounded-t-md w-10 h-10"
+                src="/images/learning_index2.png"
+                style={{ color: "transparent" }}
+              />
               </Link>
               <div className="flex items-center space-x-1">
                 <a
-                  href="https://x.com/CYLA_ai"
+                  href="https://x.com/ProjectCyla"
                   target="_blank"
                   rel="noreferrer"
                   className="w-fit flex items-center group"
@@ -45,79 +53,7 @@ const Footer = () => {
                     ></path>
                   </svg>
                 </a>
-                <a
-                  href="https://t.me/CYLAai"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="w-fit flex items-center group"
-                >
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="w-5 h-5 mr-2 group-hover:text-brand transition"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      clipRule="evenodd"
-                      d="M3.3749 10.8879C8.74359 8.62993 12.3236 7.14134 14.1148 6.42212C19.2292 4.36862 20.2919 4.0119 20.9846 4.00013C21.1369 3.99753 21.4776 4.03398 21.6982 4.20682C21.8845 4.35275 21.9358 4.5499 21.9603 4.68826C21.9848 4.82663 22.0154 5.14183 21.9911 5.38811C21.714 8.1992 20.5147 15.021 19.9046 18.1694C19.6465 19.5017 19.1382 19.9484 18.6461 19.9921C17.5766 20.0871 16.7645 19.3098 15.7287 18.6543C14.1078 17.6287 13.1921 16.9902 11.6188 15.9893C9.80053 14.8327 10.9792 14.1969 12.0154 13.158C12.2866 12.8861 16.9987 8.74867 17.0899 8.37335C17.1013 8.32641 17.1119 8.15143 17.0042 8.05904C16.8965 7.96664 16.7376 7.99824 16.6229 8.02337C16.4604 8.05898 13.871 9.71112 8.85486 12.9798C8.11988 13.467 7.45416 13.7044 6.8577 13.6919C6.20015 13.6782 4.93528 13.333 3.99498 13.038C2.84166 12.6761 1.92503 12.4847 2.00485 11.8701C2.04642 11.55 2.5031 11.2226 3.3749 10.8879Z"
-                      fill="currentColor"
-                    ></path>
-                  </svg>
-                </a>
-                <a
-                  href="https://discord.gg/jGHRSZGZp6"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="w-fit flex items-center group"
-                >
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="w-5 h-5 mr-2 group-hover:text-brand transition"
-                  >
-                    <path
-                      d="M18.9308 5.32631C17.6561 4.71242 16.2892 4.26013 14.8599 4.00109C14.8339 3.99609 14.8079 4.00858 14.7945 4.03357C14.6187 4.36175 14.4239 4.78988 14.2876 5.12639C12.7503 4.88484 11.221 4.88484 9.71527 5.12639C9.57887 4.7824 9.37707 4.36175 9.20048 4.03357C9.18707 4.00941 9.16107 3.99692 9.13504 4.00109C7.70659 4.2593 6.33963 4.71159 5.06411 5.32631C5.05307 5.33131 5.04361 5.33965 5.03732 5.35047C2.44449 9.4161 1.73421 13.3818 2.08265 17.2983C2.08423 17.3175 2.09447 17.3358 2.10867 17.3475C3.81934 18.666 5.47642 19.4665 7.10273 19.9971C7.12876 20.0054 7.15634 19.9954 7.1729 19.9729C7.55761 19.4215 7.90054 18.8401 8.19456 18.2287C8.21192 18.1929 8.19535 18.1504 8.15989 18.1363C7.61594 17.9197 7.098 17.6557 6.59977 17.3558C6.56037 17.3317 6.55721 17.2725 6.59346 17.2442C6.69831 17.1617 6.80318 17.0759 6.9033 16.9893C6.92141 16.9735 6.94665 16.9701 6.96794 16.9801C10.2411 18.5486 13.7846 18.5486 17.0191 16.9801C17.0404 16.9693 17.0657 16.9726 17.0846 16.9885C17.1847 17.0751 17.2895 17.1617 17.3952 17.2442C17.4314 17.2725 17.4291 17.3317 17.3897 17.3558C16.8914 17.6615 16.3735 17.9197 15.8288 18.1354C15.7933 18.1496 15.7775 18.1929 15.7949 18.2287C16.0952 18.8393 16.4381 19.4207 16.8157 19.9721C16.8315 19.9954 16.8599 20.0054 16.8859 19.9971C18.5201 19.4665 20.1772 18.666 21.8879 17.3475C21.9028 17.3358 21.9123 17.3183 21.9139 17.2992C22.3309 12.7712 21.2154 8.83804 18.9568 5.3513C18.9513 5.33965 18.9419 5.33131 18.9308 5.32631ZM8.68335 14.9136C7.69792 14.9136 6.88594 13.964 6.88594 12.7979C6.88594 11.6317 7.68217 10.6822 8.68335 10.6822C9.69239 10.6822 10.4965 11.6401 10.4807 12.7979C10.4807 13.964 9.68451 14.9136 8.68335 14.9136ZM15.329 14.9136C14.3435 14.9136 13.5316 13.964 13.5316 12.7979C13.5316 11.6317 14.3278 10.6822 15.329 10.6822C16.338 10.6822 17.1421 11.6401 17.1264 12.7979C17.1264 13.964 16.338 14.9136 15.329 14.9136Z"
-                      fill="currentColor"
-                    ></path>
-                  </svg>
-                </a>
-                <a
-                  href="https://www.tiktok.com/@CYLA.ai"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="w-fit flex items-center group"
-                >
-                  <svg
-                    fill="currentColor"
-                    width="800px"
-                    height="800px"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="w-5 h-5 mr-2 group-hover:text-brand transition"
-                  >
-                    <path d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-5.201 1.743l-.002-.001.002.001a2.895 2.895 0 0 1 3.183-4.51v-3.5a6.329 6.329 0 0 0-5.394 10.692 6.33 6.33 0 0 0 10.857-4.424V8.687a8.182 8.182 0 0 0 4.773 1.526V6.79a4.831 4.831 0 0 1-1.003-.104z"></path>
-                  </svg>
-                </a>
-                <a
-                  href="https://www.linkedin.com/company/web-ogs/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="w-fit flex items-center group"
-                >
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="w-5 h-5 mr-2 group-hover:text-brand transition"
-                  >
-                    <path
-                      d="M6 4.001C5.99974 4.53143 5.78877 5.04004 5.41351 5.41492C5.03825 5.78981 4.52943 6.00027 3.999 6C3.46857 5.99974 2.95996 5.78877 2.58508 5.41351C2.21019 5.03825 1.99974 4.52943 2 3.999C2.00027 3.46857 2.21123 2.95996 2.58649 2.58508C2.96175 2.21019 3.47057 1.99974 4.001 2C4.53143 2.00027 5.04004 2.21123 5.41492 2.58649C5.78981 2.96175 6.00027 3.47057 6 4.001ZM6.06 7.481H2.06V20.001H6.06V7.481ZM12.38 7.481H8.4V20.001H12.34V13.431C12.34 9.771 17.11 9.431 17.11 13.431V20.001H21.06V12.071C21.06 5.901 14 6.131 12.34 9.161L12.38 7.481Z"
-                      fill="currentColor"
-                    ></path>
-                  </svg>
-                </a>
+                
               </div>
               <div className="space-y-2">
                 {/* <a
@@ -138,9 +74,7 @@ const Footer = () => {
                             style={{ color: "transparent" }}
                           />
                         </a> */}
-                <p className="text-xs font-at-hauss-aero-medium">
-                  Verified Exclusive for Reg D/S
-                </p>
+                
               </div>
             </div>
           </div>
@@ -201,7 +135,7 @@ const Footer = () => {
                     style={{ position: "absolute" }}
                   >
                     <TextScramble hoveringColor="#FF7A00">
-                      <div>Company </div>
+                      <div>ABOUT </div>
                     </TextScramble>
                   </div>
                   <div
@@ -209,25 +143,11 @@ const Footer = () => {
                     style={{ visibility: "hidden" }}
                   >
                     <TextScramble>
-                      <div>Company</div>
+                      <div>ABOUT</div>
                     </TextScramble>
                   </div>
                 </div>
-                <a className="w-fit mt-1" href="/about">
-                  <p className="text-[11px] sm:text-xs hover:text-white font-at-hauss-aero hover:font-at-hauss-aero-semibold">
-                    About
-                  </p>
-                </a>
-                <a
-                  href="https://www.figma.com/deck/nOP3KfsEQxtC9jrblnR4Fk/CYLA-Powered-by-OrbuAi-Brand-Guidelines?node-id=1-548&amp;t=9p7O4KljNohzDXOW-1"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="w-fit mt-1"
-                >
-                  <p className="text-[11px] sm:text-xs hover:text-white font-at-hauss-aero hover:font-at-hauss-aero-semibold">
-                    Brand
-                  </p>
-                </a>
+                
                 <a
                   href="https://republic.com/CYLA-ai"
                   target="_blank"
@@ -272,9 +192,9 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="text-[11px] flex sm:flex-row flex-col justify-center sm:justify-between items-center space-y-1 mt-4">
+        <div className="px-4 text-[11px] flex sm:flex-row flex-col justify-center sm:justify-between items-center space-y-1 mt-4">
           <p>
-            © 2022-2025 <span className="text-brand">CYLA.ai</span> | All Rights
+            © 2025 <span className="text-brand">CYLA</span> | All Rights
             Reserved.
           </p>
           <p>
