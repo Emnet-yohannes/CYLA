@@ -317,7 +317,7 @@ const HomeHeader = () => {
                   href="https://x.com/ProjectCyla"
                   target="_blank"
                   rel="noreferrer"
-                  className="w-fit flex items-center group"
+                  className="w-fit flex items-center group text-brand"
                 >
                   <svg
                     viewBox="0 0 24 24"
@@ -422,7 +422,7 @@ const HomeHeader = () => {
                   href="https://x.com/ProjectCyla"
                   target="_blank"
                   rel="noreferrer"
-                  className="w-fit flex items-center group"
+                  className="w-fit flex items-center text-brand group"
                 >
                   <svg
                     viewBox="0 0 24 24"
