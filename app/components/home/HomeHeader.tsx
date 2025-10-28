@@ -227,7 +227,7 @@ const HomeHeader = () => {
                             <div className="p-2 py-3 w-full dark:text-brand text-black !font-nb-architekt">
                               <p className="text-left text-lg w-full pl-3">
                                 <TextScramble hoveringColor="#FF7A00">
-                                  PRODUCTS
+                                  HOMES
                                 </TextScramble>
                               </p>
                             </div>
@@ -286,42 +286,51 @@ const HomeHeader = () => {
                         </h3>
                       </div>
                     </div>
-                    <a href="/about">
+                    <a href="/LearningIndex">
                       <div className="p-2 py-3 w-full dark:text-brand text-black !font-nb-architekt">
                         <p className="text-left text-lg w-full pl-3">
                             <TextScramble hoveringColor="#FF7A00">
-                            <div>ABOUT</div>
+                            <div>Learning Index</div>
                           </TextScramble>
                         </p>
                       </div>
                     </a>
-                    <a href="/blog">
+                    <a href="/EvolutionLog">
                       <div className="p-2 py-3 w-full dark:text-brand text-black !font-nb-architekt">
                         <p className="text-left text-lg w-full pl-3">
                           <TextScramble hoveringColor="#FF7A00">
-                            <div>BLOG</div>
+                            <div>Evolution Log</div>
                           </TextScramble>
                         </p>
                       </div>
                     </a>
-                    <a href="/faq">
+                    <a href="/DOCS">
                       <div className="p-2 py-3 w-full dark:text-brand text-black !font-nb-architekt">
                         <p className="text-left text-lg w-full pl-3">
                           <TextScramble hoveringColor="#FF7A00">
-                            <div>FAQ</div>
+                            <div>DOCS</div>
                           </TextScramble>
                         </p>
                       </div>
                     </a>
-                    <a href="/contact">
-                      <div className="p-2 py-3 w-full dark:text-brand text-black !font-nb-architekt">
-                        <p className="text-left text-lg w-full pl-3">
-                          <TextScramble hoveringColor="#FF7A00">
-                            <div>CONTACT</div>
-                          </TextScramble>
-                        </p>
-                      </div>
-                    </a>
+                    <a
+                  href="https://x.com/ProjectCyla"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-fit flex items-center group"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-5 h-5 mr-2 group-hover:text-brand transition"
+                  >
+                    <path
+                      d="M3.04428 3L10.0569 12.3765L3 20H4.58822L10.7665 13.3255L15.7584 20H21.1632L13.756 10.0961L20.3245 3H18.7363L13.0464 9.14707L8.44906 3H3.04428ZM5.37988 4.16989H7.86285L18.8272 18.8299H16.3442L5.37988 4.16989Z"
+                      fill="currentColor"
+                    ></path>
+                  </svg>
+                </a>
                   </div>
                 </div>
               </div>
@@ -338,7 +347,7 @@ const HomeHeader = () => {
                       className="text-black dark:text-brand"
                     >
                       <TextScramble hoveringColor="#FF7A00">
-                        <div>PRODUCT</div>
+                        <div>HOME</div>
                       </TextScramble>
                     </div>
                     <div
@@ -346,37 +355,37 @@ const HomeHeader = () => {
                       style={{ visibility: "hidden" }}
                     >
                       <TextScramble hoveringColor="#FF7A00">
-                        <div>PRODUCT</div>
+                        <div>HOME</div>
                       </TextScramble>
                     </div>
                   </div>
                 </div>
-                <a href="/about">
+                <a href="/LearningIndex">
                   <div style={{ position: "relative" }}>
                     <div
                       style={{ position: "absolute" }}
                       className="text-black dark:text-brand"
                     >
                       <TextScramble hoveringColor="#FF7A00">
-                        <div>ABOUT</div>
+                        <div>Learning Index</div>
                       </TextScramble>
                     </div>
                     <div
                       className="text-black dark:text-brand"
                       style={{ visibility: "hidden" }}
                     >
-                      ABOUT
+                      Learning Index
                     </div>
                   </div>
                 </a>
-                <a href="/blog">
+                <a href="/EvolutionLog">
                   <div style={{ position: "relative" }}>
                     <div
                       style={{ position: "absolute" }}
                       className="text-black dark:text-brand"
                     >
                       <TextScramble hoveringColor="#FF7A00">
-                        <div>BLOG</div>
+                        <div>Evolution Log</div>
                       </TextScramble>
                     </div>
                     <div
@@ -384,39 +393,19 @@ const HomeHeader = () => {
                       style={{ visibility: "hidden" }}
                     >
                       <TextScramble hoveringColor="#FF7A00">
-                        <div>BLOG</div>
-                      </TextScramble>
-                    </div>
-                  </div>
-                </a>
-                <a href="/faq">
-                  <div style={{ position: "relative" }}>
-                    <div
-                      style={{ position: "absolute" }}
-                      className="text-black dark:text-brand"
-                    >
-                      <TextScramble hoveringColor="#FF7A00">
-                        <div>FAQ</div>
-                      </TextScramble>
-                    </div>
-                    <div
-                      className="text-black dark:text-brand"
-                      style={{ visibility: "hidden" }}
-                    >
-                      <TextScramble hoveringColor="#FF7A00">
-                        <div>FAQ</div>
+                        <div>Evolution Log</div>
                       </TextScramble>
                     </div>
                   </div>
                 </a>
-                <a href="/contact">
+                <a href="/DOCS">
                   <div style={{ position: "relative" }}>
                     <div
                       style={{ position: "absolute" }}
                       className="text-black dark:text-brand"
                     >
                       <TextScramble hoveringColor="#FF7A00">
-                        <div>CONTACT</div>
+                        <div>DOCS</div>
                       </TextScramble>
                     </div>
                     <div
@@ -424,10 +413,28 @@ const HomeHeader = () => {
                       style={{ visibility: "hidden" }}
                     >
                       <TextScramble hoveringColor="#FF7A00">
-                        <div>CONTACT</div>
+                        <div>DOCS</div>
                       </TextScramble>
                     </div>
                   </div>
+                </a>
+                <a
+                  href="https://x.com/ProjectCyla"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-fit flex items-center group"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-5 h-5 mr-2 group-hover:text-brand transition"
+                  >
+                    <path
+                      d="M3.04428 3L10.0569 12.3765L3 20H4.58822L10.7665 13.3255L15.7584 20H21.1632L13.756 10.0961L20.3245 3H18.7363L13.0464 9.14707L8.44906 3H3.04428ZM5.37988 4.16989H7.86285L18.8272 18.8299H16.3442L5.37988 4.16989Z"
+                      fill="currentColor"
+                    ></path>
+                  </svg>
                 </a>
               </div>
             </div>

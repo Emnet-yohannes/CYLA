@@ -197,9 +197,7 @@ const Footer = () => {
             © 2025 <span className="text-brand">CYLA</span> | All Rights
             Reserved.
           </p>
-          <p>
-            <span className="text-brand">Powered by</span> Orbu.AI | Sui
-          </p>
+          
         </div>
       </div>
     </footer>

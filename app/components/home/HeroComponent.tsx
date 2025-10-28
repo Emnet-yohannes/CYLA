@@ -107,7 +107,7 @@ const HeroComponent = () => {
       <div className="absolute bottom-16 sm:bottom-24 left-1/2 -translate-x-1/2">
         <div className="animate-bounce flex flex-col items-center text-brand space-y-1">
           <p className="text-sm sm:text-base md:text-lg lowercase">
-            View products
+            Explore Cyla
           </p>
           <svg
             width="24"

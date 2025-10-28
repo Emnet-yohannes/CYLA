@@ -40,7 +40,7 @@ export default function EvolutionLog() {
 
     term.current.open(terminalRef.current);
     term.current.writeln(
-      "\x1b[32mcyla@evolutionlog:\x1b[36m~\x1b[0m$ tail -f actions.log"
+      "\x1b[32mcyla@system-v1:~$:\x1b[36m~\x1b[0m$ tail -f actions.log"
     );
     term.current.writeln("");
 
